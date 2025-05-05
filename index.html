@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ore Transmute Checker V2</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ORE TRANSMUTE CHECKER V2</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Bienvenue sur la V2</h1>
-  <div id="app"></div>
+  <header>
+    <h1>ORE TRANSMUTE CHECKER</h1>
+    <button onclick="refreshPrices()">🔄 Rafraîchir les prix</button>
+    <nav>
+      <a href="#" onclick="showPage('main')">Accueil</a>
+      <a href="#" onclick="showPage('info')">Info</a>
+    </nav>
+  </header>
+
+  <main id="mainPage">
+    <div class="controls">
+      <label>Ville :
+        <select id="citySelect">
+          <option value="Caerleon">Caerleon</option>
+          <option value="Bridgewatch">Bridgewatch</option>
+          <option value="Martlock">Martlock</option>
+          <option value="Fort Sterling">Fort Sterling</option>
+          <option value="Lymhurst">Lymhurst</option>
+          <option value="Thetford">Thetford</option>
+        </select>
+      </label>
+    </div>
+
+    <div id="oreTableContainer"></div>
+  </main>
+
+  <section id="infoPage" class="hidden">
+    <h2>Coûts de transmutation (modifiable)</h2>
+    <div id="costEditor"></div>
+    <button onclick="saveTransmuteCosts()">💾 Sauvegarder</button>
+  </section>
 
   <script src="api.js"></script>
   <script src="main.js"></script>
