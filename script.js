@@ -1,2 +1,3 @@
-
-document.getElementById('app').innerHTML = '<p>MVP prêt. À venir : affichage des minerais, prix, recettes...</p>';
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("app").innerHTML = "<p>Bienvenue sur la V1 du Ore Transmute Checker.</p>";
+});
